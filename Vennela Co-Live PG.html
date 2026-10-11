@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vennela Co-Live PG | Luxury Living & Executive Stay</title>
+  <meta name="description" content="Experience premium luxury co-living at Vennela Co-Live PG. Designer private and sharing suites, chef-crafted meals, high-speed Wi-Fi, and 24/7 hospitality.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS TOKENS
+       ========================================================================== */
+    :root {
+      --gold-primary: #D4AF37;
+      --gold-light: #F7E7A9;
+      --gold-dark: #AA820A;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --gold-subtle: rgba(212, 175, 55, 0.12);
+
+      --bg-deep: #070913;
+      --bg-surface: #0E1224;
+      --bg-card: rgba(18, 23, 46, 0.75);
+      --bg-card-hover: rgba(25, 32, 64, 0.9);
+      --bg-glass: rgba(14, 18, 36, 0.65);
+      
+      --text-main: #F4F6FD;
+      --text-muted: #9BA3C7;
+      --text-dim: #646B8F;
+      
+      --border-subtle: rgba(212, 175, 55, 0.18);
+      --border-bright: rgba(212, 175, 55, 0.5);
+      --border-glass: rgba(255, 255, 255, 0.08);
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+
+      --shadow-luxury: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.08);
+      --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.3);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-display: 'Outfit', sans-serif;
+
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle background grid and radial ambient light */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(68, 79, 160, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & ACCENTS
+       ========================================================================== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 50%, #F3D27A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+    }
+
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary));
+    }
+    .section-eyebrow::after {
+      background: linear-gradient(90deg, var(--gold-primary), transparent);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       BUTTONS & CALLS TO ACTION
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #E6C466 0%, #D4AF37 50%, #B8860B 100%);
+      color: #0A0C16;
+      box-shadow: 0 4px 25px rgba(212, 175, 55, 0.35);
+      border: none;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 35px rgba(212, 175, 55, 0.55);
+      color: #000;
+    }
+
+    .btn-outline-gold {
+      background: rgba(212, 175, 55, 0.06);
+      border-color: var(--border-bright);
+      color: var(--gold-light);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold-primary);
+      color: #080A14;
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px var(--gold-glow);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #FFFFFF;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+    .btn-whatsapp:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(7, 9, 19, 0.85);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    nav.scrolled {
+      background: rgba(7, 9, 19, 0.96);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border-bottom-color: var(--border-bright);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 78px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .moon-crest {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #FFF4D0 0%, var(--gold-primary) 60%, #906B07 100%);
+      box-shadow: 0 0 18px var(--gold-glow);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .moon-crest::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: #0B0E1E;
+      border-radius: 50%;
+      top: 4px;
+      right: 4px;
+      opacity: 0.7;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .brand-tag {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--gold-primary);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 3px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 34px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--gold-light);
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION: LUXURY & MOONLIGHT
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 170px 0 110px;
+      overflow: hidden;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-glow-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+      top: 10%;
+      right: -5%;
+      filter: blur(50px);
+      pointer-events: none;
+      animation: floatOrb 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-40px) scale(1.08); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-bright);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      color: var(--gold-light);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge .star-icon {
+      color: var(--gold-primary);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6.2vw, 5rem);
+      line-height: 1.08;
+      font-weight: 500;
+      margin-bottom: 22px;
+      color: #FFFFFF;
+    }
+
+    .hero-title span.sub-line {
+      display: block;
+      font-size: clamp(1.8rem, 3.8vw, 3rem);
+      font-style: italic;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 46px;
+    }
+
+    .hero-trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 26px;
+    }
+
+    .trust-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-number {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .trust-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 5px;
+    }
+
+    /* Hero Showcase Card */
+    .hero-showcase {
+      position: relative;
+    }
+
+    .hero-card-stack {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      background: linear-gradient(145deg, rgba(212, 175, 55, 0.25) 0%, rgba(14, 18, 36, 0.8) 100%);
+      box-shadow: var(--shadow-luxury);
+      border: 1px solid var(--border-bright);
+    }
+
+    .hero-img-box {
+      border-radius: calc(var(--radius-lg) - 8px);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4 / 3.4;
+      background: #111529;
+    }
+
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+      display: block;
+    }
+
+    .hero-card-stack:hover .hero-img-box img {
+      transform: scale(1.04);
+    }
+
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 9, 19, 0.88) 0%, rgba(7, 9, 19, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+
+    .overlay-badge {
+      align-self: flex-start;
+      background: rgba(212, 175, 55, 0.9);
+      color: #05060D;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 8px;
+    }
+
+    .overlay-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .overlay-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .floating-amenity-pill {
+      position: absolute;
+      bottom: -22px;
+      left: -20px;
+      background: rgba(14, 18, 36, 0.92);
+      border: 1px solid var(--border-bright);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 3;
+    }
+
+    .pill-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold-subtle);
+      border: 1px solid var(--border-bright);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .pill-text strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+    }
+
+    .pill-text span {
+      font-size: 0.75rem;
+      color: var(--gold-primary);
+    }
+
+    /* Floating rating badge */
+    .floating-rating-badge {
+      position: absolute;
+      top: -18px;
+      right: -15px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(170, 130, 10, 0.95));
+      color: #070913;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      z-index: 3;
+    }
+
+    /* ==========================================================================
+       SECTION COMMON STYLING
+       ========================================================================== */
+    section {
+      padding: 105px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       ABOUT & MEANING SECTION
+       ========================================================================== */
+    .about-section {
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-quote-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-lg);
+      padding: 50px 42px;
+      position: relative;
+      box-shadow: var(--shadow-luxury);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+    }
+
+    .about-quote-card::before {
+      content: "“";
+      font-family: var(--font-serif);
+      font-size: 9rem;
+      position: absolute;
+      top: -30px;
+      left: 20px;
+      color: rgba(212, 175, 55, 0.12);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-content {
+      font-family: var(--font-serif);
+      font-size: 1.95rem;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.38;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-line {
+      width: 35px;
+      height: 1px;
+      background: var(--gold-primary);
+    }
+
+    .author-name {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    .about-text h3 {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.06rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.8;
+    }
+
+    .feature-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      transition: var(--transition-smooth);
+    }
+
+    .feature-item:hover {
+      background: var(--gold-subtle);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+
+    .feature-item .icon {
+      font-size: 1.2rem;
+      color: var(--gold-primary);
+    }
+
+    .feature-item span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       ROOMS & PRICING (SUITES)
+       ========================================================================== */
+    .rooms-section {
+      background: var(--bg-deep);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .room-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+      position: relative;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .room-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-bright);
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .room-card.highlight {
+      border: 1.5px solid var(--gold-primary);
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(18, 23, 46, 0.92) 40%);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
+    }
+
+    .room-badge-top {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 4;
+      background: linear-gradient(135deg, #F3D27A, #D4AF37);
+      color: #0A0C16;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .room-image-wrap {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #111529;
+    }
+
+    .room-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .room-card:hover .room-image-wrap img {
+      transform: scale(1.08);
+    }
+
+    .room-image-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(14, 18, 36, 0.95) 0%, rgba(14, 18, 36, 0.2) 60%, transparent 100%);
+    }
+
+    .room-body {
+      padding: 30px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .room-type {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .room-tagline {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .room-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .room-price-val {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .room-price-tenure {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .room-perks-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+
+    .room-perks-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .room-perks-list li svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--gold-primary);
+      margin-top: 2px;
+    }
+
+    .room-cta-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       AMENITIES (SIGNATURE COMFORTS)
+       ========================================================================== */
+    .amenities-section {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-deep) 100%);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .amenity-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 34px 26px;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .amenity-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .amenity-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-bright);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-card);
+    }
+
+    .amenity-card:hover::before {
+      opacity: 1;
+    }
+
+    .amenity-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--gold-primary);
+      margin-bottom: 22px;
+      transition: var(--transition-smooth);
+    }
+
+    .amenity-card:hover .amenity-icon-box {
+      background: var(--gold-primary);
+      color: #070913;
+      transform: scale(1.08);
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+
+    .amenity-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .amenity-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       A DAY AT VENNELA (TIMELINE)
+       ========================================================================== */
+    .experience-section {
+      background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 70%), var(--bg-deep);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .timeline-card {
+      background: linear-gradient(145deg, rgba(18, 23, 46, 0.8) 0%, rgba(10, 13, 28, 0.95) 100%);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px;
+      box-shadow: var(--shadow-luxury);
+      position: relative;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      position: relative;
+    }
+
+    .timeline-grid::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), var(--gold-light), var(--gold-primary), transparent);
+      z-index: 1;
+    }
+
+    .timeline-node {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .timeline-badge {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 2px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 20px var(--gold-glow);
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-node:hover .timeline-badge {
+      transform: scale(1.15);
+      background: var(--gold-primary);
+      color: #070913;
+    }
+
+    .timeline-time {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       RESIDENT TESTIMONIALS
+       ========================================================================== */
+    .reviews-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      transition: var(--transition-smooth);
+    }
+
+    .review-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .review-stars {
+      color: #FFC107;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 18px;
+    }
+
+    .user-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold-subtle);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    .user-info strong {
+      display: block;
+      color: #FFFFFF;
+      font-size: 0.92rem;
+    }
+
+    .user-info span {
+      font-size: 0.78rem;
+      color: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       BOOKING & VISIT FORM (CONVERSION FOCUS)
+       ========================================================================== */
+    .visit-section {
+      background: linear-gradient(180deg, var(--bg-deep) 0%, #06070E 100%);
+      border-top: 1px solid var(--border-bright);
+    }
+
+    .visit-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .visit-details h2 {
+      font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+      color: #FFFFFF;
+      margin-bottom: 18px;
+    }
+
+    .visit-details p.subtext {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: rgba(14, 18, 36, 0.6);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .contact-item:hover {
+      border-color: var(--gold-primary);
+      transform: translateX(4px);
+      background: var(--gold-subtle);
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gold-subtle);
+      border: 1px solid var(--border-bright);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-content .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-primary);
+      margin-bottom: 2px;
+    }
+
+    .contact-content .val {
+      font-size: 1.02rem;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    /* Form Container */
+    .form-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-bright);
+      border-radius: var(--radius-xl);
+      padding: 44px 38px;
+      box-shadow: var(--shadow-luxury);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .form-card::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+
+    .form-header {
+      margin-bottom: 28px;
+    }
+
+    .form-header h3 {
+      font-size: 2rem;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .form-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      background: rgba(7, 9, 19, 0.7);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #FFFFFF;
+      transition: var(--transition-smooth);
+      outline: none;
+      width: 100%;
+    }
+
+    .form-control::placeholder {
+      color: var(--text-dim);
+    }
+
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+      background: rgba(14, 18, 36, 0.85);
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      padding-right: 40px;
+    }
+
+    select.form-control option {
+      background: #0E1224;
+      color: #FFFFFF;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .faq-accordion {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item.active {
+      border-color: var(--gold-primary);
+      background: rgba(22, 28, 56, 0.9);
+    }
+
+    .faq-question {
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      color: var(--gold-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 26px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 180px;
+      padding: 0 26px 22px;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      background: #05060D;
+      border-top: 1px solid var(--border-subtle);
+      padding: 80px 0 35px;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+      margin-top: 16px;
+      max-width: 320px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 22px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-primary);
+      transform: translateX(3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: var(--text-dim);
+    }
+
+    .footer-bottom-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       FLOATING QUICK ACTION (WHATSAPP FLOATER)
+       ========================================================================== */
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      background: #25D366;
+      color: #FFFFFF;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: scale(1.1) rotate(6deg);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.7);
+    }
+
+    .floating-whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    .whatsapp-badge-pulse {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: whatsappPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes whatsappPulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.45); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTATIONS & MULTI-DEVICE SUPPORT
+       (Laptops, Desktops, iPads/Tablets, and Mobile Phones)
+       ========================================================================== */
+
+    /* Global Touch & Safe-Area Defaults */
+    .btn, .mobile-menu-btn, .room-cta-btn, .floating-whatsapp-btn {
+      touch-action: manipulation;
+    }
+
+    /* Tablet & iPad Viewport (<= 1024px) */
+    @media (max-width: 1024px) {
+      section {
+        padding: 85px 0;
+      }
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-actions .btn-outline-gold {
+        display: none;
+      }
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 9, 19, 0.97);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-bright);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        padding: 24px 28px 30px;
+        gap: 16px;
+        align-items: flex-start;
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+        max-height: calc(100vh - 78px);
+        overflow-y: auto;
+        z-index: 999;
+      }
+      nav.nav-open ul {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding-bottom: 12px;
+      }
+      nav ul li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      nav ul li a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 4px 0;
+      }
+      nav ul li a::after {
+        display: none;
+      }
+      .hero-grid, .about-grid, .visit-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .hero-showcase {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .rooms-grid {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 26px;
+      }
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+      }
+      .timeline-grid::before {
+        display: none;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* Mobile Phones & Phablets (<= 768px) */
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 0;
+      }
+      .hero {
+        padding: 125px 0 65px;
+        min-height: auto;
+      }
+      .hero-title {
+        font-size: clamp(2.2rem, 7.5vw, 3.4rem);
+      }
+      .hero-title span.sub-line {
+        font-size: clamp(1.4rem, 4.2vw, 2.2rem);
+      }
+      .hero-desc {
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+      .hero-trust-badges {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        text-align: center;
+      }
+      .trust-stat {
+        align-items: center;
+      }
+      .trust-number {
+        font-size: 1.7rem;
+      }
+      .trust-label {
+        font-size: 0.72rem;
+      }
+      .floating-amenity-pill {
+        position: static;
+        margin-top: 16px;
+        width: 100%;
+        justify-content: center;
+      }
+      .about-quote-card {
+        padding: 38px 24px;
+        overflow: hidden;
+      }
+      .rooms-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .room-body {
+        padding: 24px 20px;
+      }
+      .room-price-val {
+        font-size: 2.4rem;
+      }
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-card {
+        padding: 40px 22px;
+      }
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .review-card {
+        padding: 28px 20px;
+      }
+      .form-card {
+        padding: 34px 22px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .form-control {
+        font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+        min-height: 48px;
+      }
+      .faq-question {
+        padding: 18px 20px;
+        font-size: 1.15rem;
+      }
+      .faq-answer {
+        padding: 0 20px;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 0 20px 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* Compact Mobile / Small Phones (<= 480px) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      nav .container {
+        height: 70px;
+      }
+      nav ul {
+        top: 70px;
+        padding: 20px 20px 26px;
+      }
+      .brand-title {
+        font-size: 1.35rem;
+      }
+      .brand-tag {
+        font-size: 0.62rem;
+      }
+      .nav-actions .btn-gold {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+      }
+      .mobile-menu-btn {
+        padding: 6px 10px;
+        font-size: 1.3rem;
+        min-width: 42px;
+        min-height: 42px;
+      }
+      .hero {
+        padding: 105px 0 50px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+      .hero-badge {
+        font-size: 0.74rem;
+        padding: 5px 12px;
+      }
+      .trust-number {
+        font-size: 1.5rem;
+      }
+      .trust-label {
+        font-size: 0.66rem;
+      }
+      .form-card {
+        padding: 26px 16px;
+      }
+      .form-header h3 {
+        font-size: 1.6rem;
+      }
+      .contact-item {
+        padding: 14px 16px;
+        gap: 12px;
+      }
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      .contact-content .val {
+        font-size: 0.95rem;
+        word-break: break-all;
+      }
+      .floating-whatsapp-btn {
+        width: 52px;
+        height: 52px;
+        bottom: max(16px, calc(12px + env(safe-area-inset-bottom, 0px)));
+        right: max(16px, calc(12px + env(safe-area-inset-right, 0px)));
+      }
+    }
+
+    /* Ultra-Compact Mobiles & Foldables (<= 360px) */
+    @media (max-width: 360px) {
+      .container {
+        padding: 0 10px;
+      }
+      nav .container {
+        height: 64px;
+        padding: 0 10px;
+      }
+      nav ul {
+        top: 64px;
+      }
+      .nav-actions .btn-gold {
+        display: none;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .hero-trust-badges {
+        gap: 6px;
+      }
+      .trust-stat {
+        padding: 10px 4px;
+      }
+      .trust-number {
+        font-size: 1.15rem;
+      }
+      .trust-label {
+        font-size: 0.65rem;
+      }
+      .contact-item {
+        padding: 12px 10px;
+        gap: 10px;
+      }
+      .form-card {
+        padding: 20px 12px;
+      }
+    }
+    /* Video Walkthrough Styles */
+    .video-tour-section {
+      background: radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.07) 0%, transparent 60%), var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .video-tour-wrapper {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .video-player-container {
+      position: relative;
+    }
+    .video-card-stack {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      background: linear-gradient(145deg, rgba(212, 175, 55, 0.25) 0%, rgba(14, 18, 38, 0.9) 100%);
+      box-shadow: var(--shadow-luxury);
+      border: 1.5px solid var(--border-bright);
+    }
+    .video-badge-top {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      z-index: 4;
+      background: rgba(7, 9, 20, 0.88);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-bright);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .video-sound-toggle {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 6;
+      background: rgba(7, 9, 20, 0.9);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-bright);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+      touch-action: manipulation;
+    }
+    .video-sound-toggle:hover {
+      background: var(--gold-primary);
+      color: #070914;
+      border-color: var(--gold-primary);
+      transform: scale(1.05);
+    }
+    .video-sound-toggle.unmuted {
+      background: rgba(37, 211, 102, 0.92);
+      border-color: #25D366;
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+    }
+    .video-wrap {
+      border-radius: calc(var(--radius-lg) - 8px);
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      max-height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      outline: none;
+    }
+    .video-perks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .video-perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(14, 18, 38, 0.65);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      transition: var(--transition-smooth);
+    }
+    .video-perk-item:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      background: var(--gold-subtle);
+    }
+    .video-perk-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .video-perk-item strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #FFFFFF;
+      margin-bottom: 2px;
+    }
+    .video-perk-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      .video-tour-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+    @media (max-width: 600px) {
+      .video-perks-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="#top" class="logo-container">
+        <div class="moon-crest">
+          <span style="font-size:1.1rem; color:#0A0C16; font-weight:bold; z-index:2;">☾</span>
+        </div>
+        <div>
+          <span class="brand-title">Vennela</span>
+          <span class="brand-tag">Luxury Co-Live</span>
+        </div>
+      </a>
+
+      <ul>
+        <li><a href="#video-tour">Video Tour</a></li>
+        <li><a href="#rooms">Suites &amp; Pricing</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#reviews">Resident Stories</a></li>
+        <li><a href="#visit">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#visit" class="btn btn-outline-gold" style="padding: 10px 22px; font-size: 0.85rem;">Reserve Tour</a>
+        <a href="#visit" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.85rem;">Book Visit</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO: ARRIVAL & FIRST IMPRESSION
+       ========================================================================== -->
+  <header class="hero" id="top">
+    <div class="hero-glow-orb"></div>
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left: Captivating Copy -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="star-icon">✦</span> Exclusive Executive Co-Living
+          </div>
+          <h1 class="hero-title">
+            Come Home to
+            <span class="gold-gradient-text">Vennela</span>
+            <span class="sub-line">Where Luxury Meets Serenity.</span>
+          </h1>
+          <p class="hero-desc">
+            Vennela — moonlight in Telugu. We have crafted a tranquil sanctuary for ambitious students and working professionals. Step into fully serviced designer suites, 3-time chef-curated meals, blazing 300 Mbps Wi-Fi, and a community of high achievers.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#visit" class="btn btn-gold">
+              <span>Schedule a Private Tour</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="#video-tour" class="btn btn-outline-gold">
+              <span style="color:var(--gold-primary);">▶</span>
+              <span>Watch Video Tour</span>
+            </a>
+            <a href="#rooms" class="btn btn-outline-gold">
+              <span>View Suites &amp; Rates</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-badges">
+            <div class="trust-stat">
+              <span class="trust-number gold-gradient-text">4.9★</span>
+              <span class="trust-label">Resident Satisfaction</span>
+            </div>
+            <div class="trust-stat">
+              <span class="trust-number gold-gradient-text">3×</span>
+              <span class="trust-label">Chef Fresh Meals Daily</span>
+            </div>
+            <div class="trust-stat">
+              <span class="trust-number gold-gradient-text">100%</span>
+              <span class="trust-label">Power &amp; Wi-Fi Uptime</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Premium Showcase Card with Real Room Photography -->
+        <div class="hero-showcase">
+          <div class="floating-rating-badge">
+            <span>★ 4.9</span>
+            <span style="font-weight:400; opacity:0.85;">(140+ Reviews)</span>
+          </div>
+
+          <div class="hero-card-stack">
+              <img src="images/building-exterior.jpg" alt="Vennela Co-Live PG Multi-Story Building" style="width:100%; height:100%; object-fit:cover;">
+              <div class="hero-img-overlay">
+                <span class="overlay-badge">Authentic Property</span>
+                <h3 class="overlay-title">Vennela Co-Live PG Facility</h3>
+                <p class="overlay-sub">Independent multi-story residential building with rooftop fitness gym &amp; modern amenities</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-amenity-pill">
+            <div class="pill-icon">🍲</div>
+            <div class="pill-text">
+              <strong>Homely Gourmet Food</strong>
+              <span>Unlimited Breakfast, Lunch &amp; Dinner</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       ABOUT: THE PHILOSOPHY OF VENNELA
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-quote-card">
+          <p class="quote-content">
+            “Vennela is the cool, gentle moonlight that welcomes you after the city's scorching hustle. A space where you leave fatigue at the door and wake up inspired.”
+          </p>
+          <div class="quote-author">
+            <div class="author-line"></div>
+            <span class="author-name">The Vennela Promise</span>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-eyebrow">A New Standard of Co-Living</span>
+          <h3>Not Just Four Walls. A Refined Living Sanctuary.</h3>
+          <p>
+            Most hostels compromise on cleanliness, food quality, or personal space. At <strong>Vennela Co-Live PG</strong>, we flipped the script. We built an environment where luxury hospitality meets the warmth of home.
+          </p>
+          <p>
+            Whether you are burning the midnight oil for engineering exams or closing high-impact tech sprints, our serene spaces, high-speed fiber network, and round-the-clock staff support ensure zero distractions.
+          </p>
+
+          <div class="feature-points">
+            <div class="feature-item">
+              <span class="icon">✨</span>
+              <span>Daily Professional Sanitization</span>
+            </div>
+            <div class="feature-item">
+              <span class="icon">🥗</span>
+              <span>Hygienic Chef-Managed Kitchen</span>
+            </div>
+            <div class="feature-item">
+              <span class="icon">🛡️</span>
+              <span>Biometric &amp; CCTV Security</span>
+            </div>
+            <div class="feature-item">
+              <span class="icon">⚡</span>
+              <span>Full DG Power Backup</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VIRTUAL ROOM WALKTHROUGH VIDEO TOUR
+       ========================================================================== -->
+  <section class="video-tour-section" id="video-tour">
+    <div class="container">
+      <div class="video-tour-wrapper">
+        
+        <!-- Left: Video Player with Luxury Frame -->
+        <div class="video-player-container">
+          <div class="video-card-stack">
+            <div class="video-badge-top">
+              <span class="star-icon">★</span>
+              <span>Live Room Walkthrough &bull; 1:48 min</span>
+            </div>
+
+            <button type="button" class="video-sound-toggle" id="videoSoundToggleVennela" aria-label="Toggle Video Sound">
+              <span id="soundIconVennela">🔇</span>
+              <span id="soundTextVennela">Tap for Sound</span>
+            </button>
+            
+            <div class="video-wrap">
+              <video 
+                id="roomVideoPlayerVennela" 
+                controls 
+                playsinline 
+                muted 
+                loop
+                preload="metadata" 
+                poster="images/executive-room.jpg"
+              >
+                <source src="videos/room-tour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Video Context & Features -->
+        <div>
+          <span class="section-eyebrow">Virtual Walkthrough</span>
+          <h2 class="section-title" style="text-align: left; font-size: clamp(2.1rem, 4vw, 3rem);">Take a Closer Look Inside Our Real Suites</h2>
+          <p class="section-desc" style="text-align: left; margin-bottom: 24px;">
+            Watch an authentic walkthrough recorded right inside our residential suites. Experience the spacious proportions, custom wooden wardrobes, attached private bathrooms, and natural light firsthand.
+          </p>
+
+          <div class="video-perks-grid">
+            <div class="video-perk-item">
+              <div class="video-perk-icon">🛋️</div>
+              <div>
+                <strong>Move-in Ready Comfort</strong>
+                <span>Designer wooden bed, orthopedic mattress &amp; fresh linen</span>
+              </div>
+            </div>
+
+            <div class="video-perk-item">
+              <div class="video-perk-icon">🖥️</div>
+              <div>
+                <strong>Dedicated Workstation</strong>
+                <span>Personal study desk and chair with charging dock</span>
+              </div>
+            </div>
+
+            <div class="video-perk-item">
+              <div class="video-perk-icon">🚿</div>
+              <div>
+                <strong>Ensuite Modern Bath</strong>
+                <span>24×7 continuous hot water geyser &amp; sanitary fittings</span>
+              </div>
+            </div>
+
+            <div class="video-perk-item">
+              <div class="video-perk-icon">🪟</div>
+              <div>
+                <strong>Natural Sun &amp; Air</strong>
+                <span>Wide sliding windows with ventilation &amp; curtains</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="#visit" class="btn btn-gold">
+              <span>Book In-Person Visit</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="https://wa.me/919493793550?text=Hi%20Vennela%20Co-Live%2C%20I%20watched%20the%20room%20video%20and%20want%20to%20reserve%20a%20slot!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SUITES & PRICING: ATTRACTIVE & TRANSPARENT
+       ========================================================================== -->
+  <section class="rooms-section" id="rooms">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">Curated Living Spaces</span>
+        <h2 class="section-title">Select Your Signature Suite</h2>
+        <p class="section-desc">
+          Every suite is thoughtfully equipped with orthopedic mattresses, personal wardrobes, dedicated ergonomic workstations, and high-speed Wi-Fi.
+        </p>
+      </div>
+
+      <div class="rooms-grid">
+        
+        <!-- Private Room -->
+        <div class="room-card">
+          <div class="room-image-wrap">
+            <img src="images/executive-room.jpg" alt="Vennela PG Private Executive Suite" style="width:100%; height:100%; object-fit:cover;">
+            <div class="room-image-gradient"></div>
+          </div>
+          <div class="room-body">
+            <h3 class="room-type">Private Executive Suite</h3>
+            <p class="room-tagline">Complete privacy and solitude for focused professionals.</p>
+            <div class="room-price-box">
+              <span class="room-price-val gold-gradient-text">₹18,000</span>
+              <span class="room-price-tenure">/ month</span>
+            </div>
+            <ul class="room-perks-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Single occupancy private room with lock</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Attached luxury ensuite bathroom &amp; geyser</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Air conditioner (AC) &amp; sound dampening</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Custom work desk with ergonomic chair</span>
+              </li>
+            </ul>
+            <a href="#visit" class="btn btn-outline-gold room-cta-btn" onclick="preselectRoom('Private Executive Suite')">Reserve Private Suite</a>
+          </div>
+        </div>
+
+        <!-- Double Sharing (Highlighted) -->
+        <div class="room-card highlight">
+          <span class="room-badge-top">Most Popular</span>
+          <div class="room-image-wrap">
+            <img src="images/sharing-room.jpg" alt="Vennela PG Premium Double Sharing Room" style="width:100%; height:100%; object-fit:cover;">
+            <div class="room-image-gradient"></div>
+          </div>
+          <div class="room-body">
+            <h3 class="room-type">Premium Double Sharing</h3>
+            <p class="room-tagline">Balanced comfort with peer companionship &amp; ample space.</p>
+            <div class="room-price-box">
+              <span class="room-price-val gold-gradient-text">₹10,000</span>
+              <span class="room-price-tenure">/ month per bed</span>
+            </div>
+            <ul class="room-perks-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Two individual beds &amp; separate full wardrobes</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Two separate study desks with charging docks</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Attached modern bathroom with instant geyser</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>High ventilation, balcony access available</span>
+              </li>
+            </ul>
+            <a href="#visit" class="btn btn-gold room-cta-btn" onclick="preselectRoom('Premium Double Sharing')">Book Double Sharing</a>
+          </div>
+        </div>
+
+        <!-- Triple Sharing -->
+        <div class="room-card">
+          <div class="room-image-wrap">
+            <img src="images/building-exterior.jpg" alt="Vennela PG Comfort Triple Suite" style="width:100%; height:100%; object-fit:cover;">
+            <div class="room-image-gradient"></div>
+          </div>
+          <div class="room-body">
+            <h3 class="room-type">Comfort Triple Suite</h3>
+            <p class="room-tagline">Maximum affordability without ever sacrificing quality.</p>
+            <div class="room-price-box">
+              <span class="room-price-val gold-gradient-text">₹8,000</span>
+              <span class="room-price-tenure">/ month per bed</span>
+            </div>
+            <ul class="room-perks-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Generous floor plan with ample walking room</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Individual locked steel/wood cupboards</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Daily housekeeping &amp; weekly bed linen wash</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Best value with full meal &amp; Wi-Fi privileges</span>
+              </li>
+            </ul>
+            <a href="#visit" class="btn btn-outline-gold room-cta-btn" onclick="preselectRoom('Comfort Triple Suite')">Book Triple Suite</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; color: var(--text-dim); font-size: 0.9rem;">
+        ✦ Note: Rates include full meal plan, electricity backup, water, high-speed Wi-Fi, and housekeeping. No hidden maintenance charges.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       AMENITIES: RESORT-GRADE COMFORTS
+       ========================================================================== */ -->
+  <section class="amenities-section" id="amenities">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">Signature Hospitality</span>
+        <h2 class="section-title">Everything Taken Care Of</h2>
+        <p class="section-desc">
+          Enjoy the luxuries of an executive hotel with the warmth and personalized care of a family home.
+        </p>
+      </div>
+
+      <div class="amenities-grid">
+        
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🍛</div>
+          <h4>Home-Style Dining</h4>
+          <p>Nutritious South &amp; North Indian cuisine cooked in an open, spotless kitchen with rotating weekly menus.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">⚡</div>
+          <h4>300 Mbps Fiber Wi-Fi</h4>
+          <p>Enterprise dual-band mesh Wi-Fi across all floors. Seamless video calls, gaming, and zero-lag remote work.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🧺</div>
+          <h4>Smart Laundry &amp; Iron</h4>
+          <p>Fully automatic heavy-duty washing machines, ironing stations, and dedicated sun-drying zones on terraces.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🛡️</div>
+          <h4>Round-the-Clock Security</h4>
+          <p>24/7 CCTV surveillance in all corridors and entries, digital biometric access, and an on-premises warden.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🔋</div>
+          <h4>100% DG Power Backup</h4>
+          <p>Never worry about city outages. Dedicated diesel generators keep lights, fans, plugs, and internet active.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🛋️</div>
+          <h4>Sky Lounge &amp; OTT</h4>
+          <p>Designer community lounge with smart TV, comfortable couches, board games, and weekend movie nights.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">💧</div>
+          <h4>RO Mineral Water</h4>
+          <p>Multi-stage reverse osmosis water dispensers with both chilled and warm options available on every level.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">🧹</div>
+          <h4>Daily Housekeeping</h4>
+          <p>Professional cleaning crew vacuums, mops, and sanitizes rooms and washrooms on a scheduled daily timetable.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       A DAY AT VENNELA (LIFESTYLE TIMELINE)
+       ========================================================================== -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">The Vennela Rhythm</span>
+        <h2 class="section-title">A Day in Your New Life</h2>
+        <p class="section-desc">From your first morning coffee to restful nights under the stars, your routine is effortless.</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-grid">
+          
+          <div class="timeline-node">
+            <div class="timeline-badge">🌅</div>
+            <div class="timeline-time">07:30 AM</div>
+            <h4 class="timeline-title">Morning Vitality</h4>
+            <p class="timeline-desc">Hot South Indian breakfast with filter coffee, ready before you leave for college or office.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-badge">☀️</div>
+            <div class="timeline-time">02:00 PM</div>
+            <h4 class="timeline-title">Peaceful Focus</h4>
+            <p class="timeline-desc">A spotless, silent room with chilled AC and 300 Mbps Wi-Fi for your deep work sessions.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-badge">☕</div>
+            <div class="timeline-time">05:30 PM</div>
+            <h4 class="timeline-title">Chai &amp; Conversations</h4>
+            <p class="timeline-desc">Evening snacks and hot tea in the common lounge with like-minded batchmates and friends.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-badge">🌙</div>
+            <div class="timeline-time">09:00 PM</div>
+            <h4 class="timeline-title">Moonlit Comfort</h4>
+            <p class="timeline-desc">Warm dinner, relaxed vibes, and deep restorative sleep on an orthopedic mattress.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RESIDENT STORIES & REVIEWS
+       ========================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">Voices of Vennela</span>
+        <h2 class="section-title">Loved by 200+ Residents</h2>
+        <p class="section-desc">Hear directly from tech professionals and university students who made Vennela their second home.</p>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “Finding a PG where the food doesn't taste like grease was my biggest struggle. Vennela’s chef cooks like my mother back home. The rooms are spotless, and the Wi-Fi has never dropped once during my tech interviews.”
+            </p>
+          </div>
+          <div class="review-user">
+            <div class="user-avatar">AK</div>
+            <div class="user-info">
+              <strong>Aditya Kumar</strong>
+              <span>Software Engineer @ Fintech</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “As a student preparing for competitive exams, I needed peace and security. My parents were completely reassured by the biometric access and CCTV. The study desks are huge, and the atmosphere is deeply respectful.”
+            </p>
+          </div>
+          <div class="review-user">
+            <div class="user-avatar">SR</div>
+            <div class="user-info">
+              <strong>Sneha Reddy</strong>
+              <span>Postgrad Scholar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “The best double-sharing PG experience in town. They don’t cram extra beds into rooms; there is genuine space, good lighting, and the common lounge is great for unwinding after long 10-hour days.”
+            </p>
+          </div>
+          <div class="review-user">
+            <div class="user-avatar">VN</div>
+            <div class="user-info">
+              <strong>Vikram Nair</strong>
+              <span>Product Analyst</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VISIT & BOOKING (HIGH CONVERSION CONTACT FORM)
+       ========================================================================== -->
+  <section class="visit-section" id="visit">
+    <div class="container">
+      <div class="visit-wrapper">
+        
+        <!-- Left: Details & Direct Contact -->
+        <div class="visit-details">
+          <span class="section-eyebrow">Experience Vennela in Person</span>
+          <h2>Your New Home is Waiting. Come for a Walkthrough.</h2>
+          <p class="subtext">
+            Drop by for a warm cup of chai, tour the rooms, taste our food, and experience the calmness firsthand. We’d love to show you around.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-content">
+              <div class="label">Call / WhatsApp Support</div>
+              <div class="val">+91 94937 93550</div>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Vennela+Co-Live+PG+1+Bengaluru" target="_blank" rel="noopener noreferrer" class="contact-item" style="text-decoration: none; color: inherit; cursor: pointer;" title="Click to open location in Google Maps">
+            <div class="contact-icon">📍</div>
+            <div class="contact-content" style="flex: 1;">
+              <div class="label" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Prime Landmark Location</span>
+                <span style="font-size: 0.72rem; color: var(--gold-light); font-weight: 500;">Open Maps ↗</span>
+              </div>
+              <div class="val">Vennela Co-Live PG, Near Tech Hub &amp; Metro, Bengaluru</div>
+            </div>
+          </a>
+
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-content">
+              <div class="label">Visiting Hours</div>
+              <div class="val">Open 7 Days a Week: 8:00 AM – 9:00 PM</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 28px;">
+            <a href="https://wa.me/919000000000?text=Hi%20Vennela%20Co-Live%2C%20I%20would%20like%20to%20visit%20today!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.125-.526-1.522-.638-2.52-2.186-2.597-2.288-.077-.101-.617-.824-.617-1.572 0-.749.387-1.117.525-1.27.138-.152.3-.19.4-.19.1 0 .2 0 .288.006.096.005.226-.037.35.263.125.3.425 1.036.463 1.112.037.076.062.165.012.266-.05.101-.075.165-.15.253-.075.088-.157.197-.225.266-.075.076-.153.158-.066.308.087.15.385.635.826 1.028.568.505 1.047.662 1.196.737.15.076.238.063.326-.038.088-.101.376-.437.476-.588.1-.151.2-.126.338-.075.138.05 8.78 4.14 1.026 4.265.15.076.25.114.288.177.038.063.038.368-.106.773z"/></svg>
+              <span>Instant Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Booking Form -->
+        <div class="form-card">
+          <div class="form-header">
+            <span class="section-eyebrow" style="margin-bottom:6px;">Instant Confirmation</span>
+            <h3>Book Your Free Walkthrough</h3>
+            <p>Fill in your details below and our resident director will reach out within 15 minutes.</p>
+          </div>
+
+          <form class="booking-form" id="bookingForm" onsubmit="handleFormSubmit(event)">
+            
+            <div class="form-group">
+              <label for="fullName">Your Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phoneNumber">WhatsApp Number</label>
+                <input type="tel" id="phoneNumber" class="form-control" placeholder="e.g. +91 9876543210" required>
+              </div>
+              <div class="form-group">
+                <label for="roomChoice">Preferred Suite</label>
+                <select id="roomChoice" class="form-control">
+                  <option value="Private Executive Suite">Private Executive (₹18,000)</option>
+                  <option value="Premium Double Sharing" selected>Premium Double (₹10,000)</option>
+                  <option value="Comfort Triple Suite">Comfort Triple (₹8,000)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="visitDate">Preferred Visit Date</label>
+                <input type="date" id="visitDate" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="moveInTimeline">Expected Move-in</label>
+                <select id="moveInTimeline" class="form-control">
+                  <option value="Immediately">Immediate (Next 3 Days)</option>
+                  <option value="Within this week">Within 1 Week</option>
+                  <option value="Next month">Next Month</option>
+                  <option value="Just inquiring">Just Exploring Options</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="userNotes">Special Requirements (Optional)</label>
+              <input type="text" id="userNotes" class="form-control" placeholder="e.g. AC requirement, food preference (Veg/Non-Veg)">
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; margin-top: 6px;">
+              <span>Confirm &amp; Send on WhatsApp</span>
+              <span>→</span>
+            </button>
+
+            <p style="text-align: center; font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">
+              🔒 We never spam. Your number is only used to schedule your walkthrough.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ)
+       ========================================================================== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Clear &amp; Transparent</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Got questions before booking? Here are answers to what prospective residents ask most.</p>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What meals are included in the monthly rent?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            All 3 meals (Breakfast, Lunch, and Dinner) along with evening hot tea/coffee are included in your monthly rent. On weekends, special lunch and dinners are prepared. We maintain separate hygienic preparation standards.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What is the security deposit and lock-in period?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We require only 1 month of refundable security deposit. There is a nominal 3-month lock-in period, followed by a simple 30-day notice period if you ever decide to move out.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Are there any curfew restrictions for working professionals?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We understand the modern tech and medical schedule. Residents have personalized biometric smart access. If you are returning late from your shift or airport, you can enter safely using your authorized scan.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How fast and reliable is the internet connection?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We have dedicated dual-line fiber connections with speeds up to 300 Mbps, supported by commercial mesh routers on every floor. The generator ensures zero Wi-Fi drop during power failures.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="logo-container">
+            <div class="moon-crest">
+              <span style="font-size:1.1rem; color:#0A0C16; font-weight:bold; z-index:2;">☾</span>
+            </div>
+            <div>
+              <span class="brand-title">Vennela</span>
+              <span class="brand-tag">Luxury Co-Live</span>
+            </div>
+          </div>
+          <p>
+            Vennela Co-Live PG is dedicated to elevating student and executive living with hotel-grade comforts, genuine hospitality, and an inspiring community.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Suites</h4>
+          <ul class="footer-links">
+            <li><a href="#rooms">Private Executive Suite</a></li>
+            <li><a href="#rooms">Premium Double Sharing</a></li>
+            <li><a href="#rooms">Comfort Triple Suite</a></li>
+            <li><a href="#amenities">Included Amenities</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#about">The Vennela Story</a></li>
+            <li><a href="#experience">Daily Routine</a></li>
+            <li><a href="#reviews">Resident Reviews</a></li>
+            <li><a href="#visit">Virtual &amp; Physical Tour</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact &amp; Visit</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+919493793550">+91 94937 93550</a></li>
+            <li><a href="tel:+916363757273">+91 63637 57273</a></li>
+            <li><a href="https://wa.me/919493793550" target="_blank" rel="noopener noreferrer">WhatsApp Director</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Vennela+Co-Live+PG+1+Bengaluru" target="_blank" rel="noopener noreferrer" style="color:var(--gold-primary);">📍 Get Directions on Google Maps ↗</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Vennela Co-Live PG. All rights reserved. Crafted for excellence.</div>
+        <div class="footer-bottom-quote">“Under the gentle moonlight, rest well and rise high.”</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP CTA
+       ========================================================================== -->
+  <a href="https://wa.me/919000000000?text=Hello%20Vennela%20Co-Live%2C%20I%20am%20looking%20for%20a%20luxury%20PG%20room.%20Can%20you%20share%20details%3F" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+    <div class="whatsapp-badge-pulse"></div>
+    <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.125-.526-1.522-.638-2.52-2.186-2.597-2.288-.077-.101-.617-.824-.617-1.572 0-.749.387-1.117.525-1.27.138-.152.3-.19.4-.19.1 0 .2 0 .288.006.096.005.226-.037.35.263.125.3.425 1.036.463 1.112.037.076.062.165.012.266-.05.101-.075.165-.15.253-.075.088-.157.197-.225.266-.075.076-.153.158-.066.308.087.15.385.635.826 1.028.568.505 1.047.662 1.196.737.15.076.238.063.326-.038.088-.101.376-.437.476-.588.1-.151.2-.126.338-.075.138.05 8.78 4.14 1.026 4.265.15.076.25.114.288.177.038.063.038.368-.106.773z"/></svg>
+  </a>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: INTERACTION & WHATSAPP SYNC
+       ========================================================================== -->
+  <script>
+    // Set default date picker to tomorrow
+    window.addEventListener('DOMContentLoaded', () => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const dateInput = document.getElementById('visitDate');
+      if (dateInput) {
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+        dateInput.min = new Date().toISOString().split('T')[0];
+      }
+    });
+
+    // Sticky Navbar shadow on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile & Tablet Navigation Menu Toggle
+    const navbar = document.getElementById('navbar');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    if (mobileMenuToggle && navbar) {
+      mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navbar.classList.toggle('nav-open');
+        mobileMenuToggle.textContent = isOpen ? '✕' : '☰';
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Smoothly close menu when clicking any nav link
+      document.querySelectorAll('nav ul a').forEach(link => {
+        link.addEventListener('click', () => {
+          navbar.classList.remove('nav-open');
+          mobileMenuToggle.textContent = '☰';
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close menu when tapping anywhere outside
+      document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target)) {
+          navbar.classList.remove('nav-open');
+          mobileMenuToggle.textContent = '☰';
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Preselect room from cards
+    function preselectRoom(roomName) {
+      const select = document.getElementById('roomChoice');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === roomName || select.options[i].text.includes(roomName)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // Form submission -> Instant WhatsApp redirect
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+      const room = document.getElementById('roomChoice').value;
+      const date = document.getElementById('visitDate').value;
+      const timeline = document.getElementById('moveInTimeline').value;
+      const notes = document.getElementById('userNotes').value.trim();
+
+      const message = 
+`*✦ INQUIRY FOR VENNELA CO-LIVE PG ✦*
+---------------------------------------
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+🛏️ *Preferred Suite:* ${room}
+📅 *Preferred Visit Date:* ${date}
+⏳ *Move-in Timeline:* ${timeline}
+${notes ? `📝 *Special Notes:* ${notes}` : ''}
+---------------------------------------
+Hi Team Vennela, I would like to book a visit and check room availability. Please confirm my slot!`;
+
+      const whatsappURL = `https://wa.me/919493793550?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+      });
+
+      // Toggle current
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // ==========================================================================
+    // AUTOPLAY VIDEO ON SCROLL (IntersectionObserver)
+    // ==========================================================================
+    const roomVideoVennela = document.getElementById('roomVideoPlayerVennela');
+    const soundToggleVennela = document.getElementById('videoSoundToggleVennela');
+    const soundIconVennela = document.getElementById('soundIconVennela');
+    const soundTextVennela = document.getElementById('soundTextVennela');
+
+    if (roomVideoVennela) {
+      // Must be muted for mobile and modern browser autoplay policy compliance
+      roomVideoVennela.muted = true;
+
+      let isVideoInView = false;
+
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              isVideoInView = true;
+              const playPromise = roomVideoVennela.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                  roomVideoVennela.muted = true;
+                  roomVideoVennela.play().catch(() => {});
+                });
+              }
+            } else {
+              isVideoInView = false;
+              if (!roomVideoVennela.paused) {
+                roomVideoVennela.pause();
+              }
+            }
+          });
+        }, {
+          threshold: 0.35
+        });
+
+        videoObserver.observe(roomVideoVennela);
+      } else {
+        window.addEventListener('scroll', () => {
+          const rect = roomVideoVennela.getBoundingClientRect();
+          const inView = rect.top < window.innerHeight && rect.bottom > 0;
+          if (inView && roomVideoVennela.paused) {
+            roomVideoVennela.play().catch(() => {});
+          } else if (!inView && !roomVideoVennela.paused) {
+            roomVideoVennela.pause();
+          }
+        }, { passive: true });
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          roomVideoVennela.pause();
+        } else if (isVideoInView) {
+          roomVideoVennela.play().catch(() => {});
+        }
+      });
+
+      if (soundToggleVennela) {
+        soundToggleVennela.addEventListener('click', (e) => {
+          e.stopPropagation();
+          roomVideoVennela.muted = !roomVideoVennela.muted;
+          updateSoundUIVennela();
+          if (!roomVideoVennela.muted) {
+            roomVideoVennela.play().catch(() => {});
+          }
+        });
+
+        roomVideoVennela.addEventListener('volumechange', updateSoundUIVennela);
+      }
+
+      function updateSoundUIVennela() {
+        if (!soundToggleVennela) return;
+        if (roomVideoVennela.muted || roomVideoVennela.volume === 0) {
+          if (soundIconVennela) soundIconVennela.textContent = '🔇';
+          if (soundTextVennela) soundTextVennela.textContent = 'Tap for Sound';
+          soundToggleVennela.classList.remove('unmuted');
+        } else {
+          if (soundIconVennela) soundIconVennela.textContent = '🔊';
+          if (soundTextVennela) soundTextVennela.textContent = 'Sound On';
+          soundToggleVennela.classList.add('unmuted');
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
