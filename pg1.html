@@ -946,6 +946,11 @@
       transform: scale(1.06);
     }
 
+    .gallery-item.col-12 {
+      grid-column: span 12;
+      height: 420px;
+    }
+
     .gallery-item.col-6 {
       grid-column: span 6;
       height: 340px;
@@ -1752,6 +1757,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 36px;
       }
+      .gallery-item.col-12 {
+        grid-column: span 12;
+        height: 360px;
+      }
       .gallery-item.col-6, .gallery-item.col-4 {
         grid-column: span 6;
         height: 320px;
@@ -1805,7 +1814,7 @@
         width: 100%;
         justify-content: center;
       }
-      .gallery-item.col-6, .gallery-item.col-4 {
+      .gallery-item.col-12, .gallery-item.col-6, .gallery-item.col-4 {
         grid-column: span 12;
         height: 280px;
       }
@@ -2203,12 +2212,21 @@
             </div>
           </div>
 
-          <!-- Private Balconies & Ventilation (Wide) -->
+          <!-- Washing Machine & Laundry (Wide) -->
           <div class="gallery-item col-6">
-            <img src="images/balconyexter.jpeg" alt="Vennela PG-1 Private Balcony and Architecture" loading="lazy">
+            <img src="images/washing.jpg" alt="Vennela PG-1 Washing Machine &amp; Dryer" loading="lazy">
             <div class="gallery-caption">
-              <span class="gallery-tag">Open Air &amp; Balconies</span>
-              <div class="gallery-title">Airy Private Balconies &amp; Outdoor Ventilation</div>
+              <span class="gallery-tag">Laundry Care</span>
+              <div class="gallery-title">Washing Machine &amp; Dryer</div>
+            </div>
+          </div>
+
+          <!-- Indoor Games & Snooker Lounge (Full Width Featured) -->
+          <div class="gallery-item col-12">
+            <img src="images/games-zone.jpg" alt="Vennela PG-1 Indoor Games &amp; Recreation Lounge with Snooker, Carrom &amp; Smart TV" loading="lazy" style="object-position: center 60%;">
+            <div class="gallery-caption">
+              <span class="gallery-tag">Recreation &amp; Community Lounge</span>
+              <div class="gallery-title">Indoor Games Lounge with Snooker, Carrom &amp; Smart TV</div>
             </div>
           </div>
 
